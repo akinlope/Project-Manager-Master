@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
-export const Button = ({ children, ...props }) => {
+export const Button = ({onClick, children, prop}) => {
   return (
-    <button className=" px-4 py-2 text-xs md:text-base bg-stone-700 text-stone-400 hover:bg-stone-600 hover:text-stone-100 rounded-md" {...props}>
-      {children}
+    <button onClick={onClick} className=' text-xl font-semibold rounded-md px-4 py-2 bg-sky-600 text-sky-200 hover:bg-sky-400 hover:text-sky-50' {...prop}>
+        {children}
     </button>
-  );
-};
+  )
+}
