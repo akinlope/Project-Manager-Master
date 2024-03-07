@@ -19,8 +19,8 @@ export const AddProject = ({ addProject, closeAddProject }) => {
       enteredTitle.trim() === "" ||
       enteredDescription.trim() === "" ||
       enteredDate.trim() === ""
-    ) return setError(prevState => !prevState)
-      // {return dialogRef.current.open();}
+    ) return dialogRef.current.open()
+    // setError(prevState => !prevState)
 
     const myData = {
       title: enteredTitle,
@@ -31,9 +31,11 @@ export const AddProject = ({ addProject, closeAddProject }) => {
     addProject(myData);
   };
   return (
-    <>{
-      error && <Modal setError={setError} ref={dialogRef} buttonText={"Close"} />
-    }
+    <>
+    {/* { */}
+      {/* error &&  */}
+      <Modal setError={setError} ref={dialogRef} buttonText={"Close"} />
+    {/* } */}
       <div className=" mt-20 w-[35rem]">
         <div className=" flex justify-end gap-4">
           <button onClick={closeAddProject} className=" hover:text-red-500">

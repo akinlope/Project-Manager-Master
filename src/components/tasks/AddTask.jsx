@@ -8,15 +8,17 @@ export const AddTask = ({ onAddTask }) => {
 
   const handleAddTask = () => {
 
-    if(text.trim() === "") return setError(prevState => !prevState)
+    if(text.trim() === "") return  dialog.current.open()     // setError(prevState => !prevState)
+    
     onAddTask(text);
     setText("");
   };
   return (
     <>
-    {
-      error && <Modal ref={dialog} setError={setError}  />
-    }
+    {/* { */}
+      {/* error &&  */}
+      <Modal ref={dialog} setError={setError}  />
+    {/* } */}
       <div className=" flex  justify-between">
         <input
           onChange={(e) => setText(e.target.value)}
